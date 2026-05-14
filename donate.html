@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | The Elévara Foundation</title>
+  <meta name="description" content="Support emerging creative talent and entrepreneurs. 100% of donations go directly to portfolio grants, business capital, equipment, and mentorship.">
+  
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  
+  <meta property="og:title" content="The Elévara Foundation | Donate">
+  <meta property="og:description" content="100% of donations fund portfolio grants, business capital, equipment access, and mentorship for emerging creative talent.">
+  <meta property="og:image" content="https://elevarafoundation.org/logo.png">
+  <meta property="og:url" content="https://elevarafoundation.org/donate.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Elévara Foundation | Donate">
+  <meta name="twitter:description" content="Every dollar creates access. Support emerging creatives building the future.">
+  <meta name="twitter:image" content="https://elevarafoundation.org/logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #C8A95A; --gold-dim: rgba(200, 169, 90, 0.12); --gold-bright: #D4B76A;
+      --charcoal: #0A0A09; --surface: #141413; --surface-elevated: #1C1C1A;
+      --cream: #F5F1E8; --text: #E8E6E1; --text-muted: #A8A6A1;
+      --border: rgba(200, 169, 90, 0.15);
+      --font-display: 'Cormorant Garamond', serif; --font-body: 'Source Serif 4', serif;
+    }
+    body { font-family: var(--font-body); background: var(--charcoal); color: var(--text); line-height: 1.7; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 10, 9, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    nav { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; transition: all 0.3s ease; }
+    .logo img { height: 36px; width: auto; }
+    .logo span { font-family: var(--font-display); font-size: 16px; font-weight: 300; letter-spacing: 0.08em; color: var(--gold); }
+    .logo:hover span { color: var(--gold-bright); }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 300; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .donate-btn-nav { padding: 10px 24px; background: var(--gold); color: var(--charcoal); border: none; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; font-family: var(--font-body); }
+    .donate-btn-nav:hover { background: var(--gold-bright); transform: translateY(-2px); }
+    .hero { margin-top: 80px; padding: 100px 32px 60px; background: linear-gradient(135deg, var(--charcoal) 0%, #0F0F0E 100%); text-align: center; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 72px); font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 24px; }
+    .hero p { font-size: 18px; line-height: 1.7; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+    .donation-section { padding: 80px 32px; background: var(--surface); }
+    .donation-container { max-width: 900px; margin: 0 auto; }
+    .donation-form { background: var(--charcoal); border: 1px solid var(--border); padding: 60px 50px; }
+    .form-section { margin-bottom: 48px; }
+    .form-section:last-child { margin-bottom: 0; }
+    .form-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; font-weight: 600; }
+    .amount-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+    .amount-btn { padding: 20px; background: var(--surface); border: 2px solid var(--border); color: var(--text); font-size: 24px; font-family: var(--font-display); font-weight: 300; cursor: pointer; transition: all 0.3s ease; text-align: center; }
+    .amount-btn:hover, .amount-btn.active { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
+    .custom-amount { width: 100%; padding: 18px; background: var(--surface); border: 2px solid var(--border); color: var(--text); font-size: 20px; font-family: var(--font-display); transition: all 0.3s ease; }
+    .custom-amount:focus { outline: none; border-color: var(--gold); background: var(--gold-dim); }
+    .frequency-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .frequency-btn { padding: 16px; background: var(--surface); border: 2px solid var(--border); color: var(--text-muted); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-align: center; font-family: var(--font-body); }
+    .frequency-btn:hover, .frequency-btn.active { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
+    .impact-preview { background: var(--surface-elevated); border-left: 4px solid var(--gold); padding: 24px; margin-top: 32px; }
+    .impact-preview h3 { font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; font-weight: 600; }
+    .impact-preview p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+    .form-input { width: 100%; padding: 16px; background: var(--surface); border: 1px solid var(--border); color: var(--text); font-size: 15px; font-family: var(--font-body); transition: all 0.3s ease; margin-bottom: 16px; }
+    .form-input:focus { outline: none; border-color: var(--gold); background: var(--gold-dim); }
+    .form-checkbox { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .form-checkbox input { width: 20px; height: 20px; }
+    .form-checkbox label { font-size: 14px; color: var(--text-muted); }
+    .submit-btn { width: 100%; padding: 20px; background: var(--gold); color: var(--charcoal); border: none; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: var(--font-body); }
+    .submit-btn:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(200, 169, 90, 0.4); }
+    .trust-badges { display: flex; justify-content: center; gap: 40px; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .trust-badge { text-align: center; }
+    .trust-badge-icon { font-size: 32px; margin-bottom: 8px; }
+    .trust-badge-text { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .named-giving { padding: 80px 32px; background: var(--charcoal); }
+    .named-giving-content { max-width: 1000px; margin: 0 auto; }
+    .named-giving h2 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 48px); font-weight: 300; color: var(--cream); margin-bottom: 32px; text-align: center; }
+    .named-giving p { font-size: 17px; color: var(--text-muted); text-align: center; margin-bottom: 48px; line-height: 1.7; }
+    .giving-tiers { display: grid; gap: 24px; }
+    .giving-tier { background: var(--surface); border: 1px solid var(--border); padding: 40px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; transition: all 0.3s ease; }
+    .giving-tier:hover { border-color: var(--gold); background: var(--surface-elevated); transform: translateX(4px); }
+    .tier-info h3 { font-family: var(--font-display); font-size: 28px; font-weight: 300; color: var(--gold); margin-bottom: 8px; }
+    .tier-amount { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-bright); margin-bottom: 16px; font-weight: 600; }
+    .tier-info p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+    .tier-btn { padding: 14px 32px; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; font-family: var(--font-body); text-decoration: none; display: inline-block; }
+    .tier-btn:hover { background: var(--gold); color: var(--charcoal); }
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 60px 32px 32px; }
+    .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+    .footer-brand h3 { font-family: var(--font-display); font-size: 20px; font-weight: 300; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 16px; }
+    .footer-brand p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+    .footer-section h4 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 600; }
+    .footer-section ul { list-style: none; }
+    .footer-section li { margin-bottom: 12px; }
+    .footer-section a { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; }
+    .footer-section a:hover { color: var(--gold); }
+    .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-bottom p { font-size: 13px; color: var(--text-muted); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .donation-form { padding: 40px 24px; }
+      .amount-grid { grid-template-columns: repeat(2, 1fr); }
+      .giving-tier { grid-template-columns: 1fr; text-align: center; }
+      .footer-content { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="The Elévara Foundation">
+        <span>THE ELÉVARA FOUNDATION</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="donate.html" class="donate-btn-nav">Donate</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Build the<br>Creative Economy</h1>
+    <p>Every donation creates access for emerging talent and entrepreneurs. 100% of funds go directly to portfolio grants, business capital, equipment, and mentorship.</p>
+  </section>
+
+  <section class="donation-section">
+    <div class="donation-container">
+      <div class="donation-form">
+        
+        <div class="form-section">
+          <label class="form-label">Select Amount</label>
+          <div class="amount-grid">
+            <button class="amount-btn" onclick="selectAmount(100)">$100</button>
+            <button class="amount-btn" onclick="selectAmount(500)">$500</button>
+            <button class="amount-btn" onclick="selectAmount(1500)">$1,500</button>
+            <button class="amount-btn" onclick="selectAmount(5000)">$5,000</button>
+            <button class="amount-btn" onclick="selectAmount(10000)">$10,000</button>
+            <button class="amount-btn" onclick="selectAmount(25000)">$25,000</button>
+          </div>
+          <input type="number" class="custom-amount" id="customAmount" placeholder="Or enter custom amount" min="1">
+        </div>
+
+        <div class="form-section">
+          <label class="form-label">Frequency</label>
+          <div class="frequency-toggle">
+            <button class="frequency-btn active" onclick="setFrequency('onetime')">One-Time</button>
+            <button class="frequency-btn" onclick="setFrequency('monthly')">Monthly</button>
+          </div>
+        </div>
+
+        <div class="impact-preview" id="impactPreview">
+          <h3>Your Impact</h3>
+          <p id="impactText">Select an amount to see the impact your donation will create.</p>
+        </div>
+
+        <div class="form-section">
+          <label class="form-label">Donor Information (Optional)</label>
+          <input type="text" class="form-input" placeholder="Full Name">
+          <input type="email" class="form-input" placeholder="Email Address">
+          <div class="form-checkbox">
+            <input type="checkbox" id="anonymous">
+            <label for="anonymous">Make this donation anonymous</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="updates">
+            <label for="updates">Send me annual impact reports</label>
+          </div>
+        </div>
+
+        <button class="submit-btn" onclick="alert('Stripe integration pending 501(c)(3) approval. Contact foundation@elevarafoundation.org to donate.')">Complete Donation</button>
+
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <div class="trust-badge-icon">🔒</div>
+            <div class="trust-badge-text">Secure</div>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">💯</div>
+            <div class="trust-badge-text">100% to Programs</div>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">📊</div>
+            <div class="trust-badge-text">Tax-Deductible</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="named-giving">
+    <div class="named-giving-content">
+      <h2>Named Giving Levels</h2>
+      <p>Major donors receive public recognition, annual impact reports, and invitations to exclusive Foundation events showcasing recipient success stories.</p>
+      
+      <div class="giving-tiers">
+        <div class="giving-tier">
+          <div class="tier-info">
+            <h3>Founding Patron</h3>
+            <div class="tier-amount">$10,000+</div>
+            <p>Fund 20 portfolio grants or 5 business startups. Recognition on website and annual reports. Quarterly impact updates.</p>
+          </div>
+          <a href="#" class="tier-btn" onclick="selectAmount(10000); window.scrollTo(0, 0); return false;">Select</a>
+        </div>
+
+        <div class="giving-tier">
+          <div class="tier-info">
+            <h3>Visionary Circle</h3>
+            <div class="tier-amount">$25,000+</div>
+            <p>Sponsor an entire program for one year. Name displayed prominently on program page. Private recipient showcase event.</p>
+          </div>
+          <a href="#" class="tier-btn" onclick="selectAmount(25000); window.scrollTo(0, 0); return false;">Select</a>
+        </div>
+
+        <div class="giving-tier">
+          <div class="tier-info">
+            <h3>Legacy Builder</h3>
+            <div class="tier-amount">$50,000+</div>
+            <p>Create lasting infrastructure. Name a permanent equipment library or workshop series. Board consultation on program development.</p>
+          </div>
+          <a href="#" class="tier-btn" onclick="selectAmount(50000); window.scrollTo(0, 0); return false;">Select</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>THE ELÉVARA FOUNDATION</h3>
+        <p>A 501(c)(3) nonprofit organization removing financial barriers for emerging creative talent and entrepreneurs building the creative economy.</p>
+        <p style="font-size: 12px; color: var(--gold); letter-spacing: 0.06em; margin-top: 20px;">EIN: [Pending 501(c)(3) Application]</p>
+      </div>
+      <div class="footer-section">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#portfolio">Portfolio Grants</a></li>
+          <li><a href="programs.html#business">Business Grants</a></li>
+          <li><a href="programs.html#booking">First Booking Fund</a></li>
+          <li><a href="programs.html#equipment">Equipment Library</a></li>
+          <li><a href="programs.html#space">Space Grants</a></li>
+          <li><a href="programs.html#mentorship">Mentorship</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="donate.html">Make a Donation</a></li>
+          <li><a href="apply.html">Apply for Support</a></li>
+          <li><a href="contact.html">Corporate Partnership</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Foundation</h4>
+        <ul>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="impact.html">Impact Reports</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 The Elévara Foundation. All rights reserved.</p>
+      <p style="font-size: 13px; color: var(--gold); letter-spacing: 0.06em;">foundation@elevarafoundation.org · 501(c)(3) Pending</p>
+    </div>
+  </footer>
+
+  <script>
+    const impactMessages = {
+      100: "Covers professional hair and makeup for one portfolio shoot",
+      500: "Funds a complete professional portfolio for one emerging model",
+      1500: "Purchases one camera + lighting kit for our Equipment Library",
+      5000: "Sponsors 10 portfolio grants or an entire workshop series",
+      10000: "Funds 20 portfolio grants or 5 business startups",
+      25000: "Sponsors an entire program for one year",
+      50000: "Creates permanent infrastructure like a named equipment library"
+    };
+
+    function selectAmount(amount) {
+      document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('customAmount').value = amount;
+      updateImpact(amount);
+    }
+
+    function setFrequency(freq) {
+      document.querySelectorAll('.frequency-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    function updateImpact(amount) {
+      const message = impactMessages[amount] || `Your $${amount.toLocaleString()} donation will directly fund grants, equipment, and mentorship for emerging creative talent.`;
+      document.getElementById('impactText').textContent = message;
+    }
+
+    document.getElementById('customAmount').addEventListener('input', function() {
+      const amount = parseInt(this.value);
+      if (amount > 0) {
+        document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+        updateImpact(amount);
+      }
+    });
+  </script>
+
+</body>
+</html>

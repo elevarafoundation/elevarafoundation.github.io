@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Mission | The Elévara Foundation</title>
+  <meta name="description" content="The Elévara Foundation removes financial barriers for emerging creative talent and entrepreneurs. Meet our board, understand our values, and see our commitment to transparency.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="The Elévara Foundation | Our Mission">
+  <meta property="og:description" content="501(c)(3) nonprofit removing financial barriers for emerging creative talent and entrepreneurs.">
+  <meta property="og:image" content="https://elevarafoundation.org/logo.png">
+  <meta property="og:url" content="https://elevarafoundation.org/mission.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Elévara Foundation | Our Mission">
+  <meta name="twitter:description" content="Access over everything. Building the creative economy through grants, mentorship, and transparency.">
+  <meta name="twitter:image" content="https://elevarafoundation.org/logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --gold: #C8A95A;
+      --gold-dim: rgba(200, 169, 90, 0.12);
+      --gold-bright: #D4B76A;
+      --charcoal: #0A0A09;
+      --surface: #141413;
+      --surface-elevated: #1C1C1A;
+      --cream: #F5F1E8;
+      --text: #E8E6E1;
+      --text-muted: #A8A6A1;
+      --border: rgba(200, 169, 90, 0.15);
+      
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Source Serif 4', serif;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--charcoal);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 9, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .logo img {
+      height: 36px;
+      width: auto;
+    }
+    
+    .logo span {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+    
+    .logo:hover span {
+      color: var(--gold-bright);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 300;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+    
+    .donate-btn-nav {
+      padding: 10px 24px;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+    
+    .donate-btn-nav:hover {
+      background: var(--gold-bright);
+      transform: translateY(-2px);
+    }
+    
+    .hero {
+      margin-top: 80px;
+      padding: 120px 32px 80px;
+      background: linear-gradient(135deg, var(--charcoal) 0%, #0F0F0E 100%);
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 7vw, 72px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+    
+    .hero p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .section {
+      padding: 100px 32px;
+    }
+    
+    .section-alt {
+      background: var(--surface);
+    }
+    
+    .section-content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    
+    .lead {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    
+    .content-block {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .board-member {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .board-member:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+    
+    .board-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      border: 3px solid var(--gold);
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: var(--gold);
+    }
+    
+    .board-member h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    
+    .board-title {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    
+    .board-bio {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+    
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+      border-left: 4px solid var(--gold);
+    }
+    
+    .value-card h3 {
+      font-size: 18px;
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    
+    .value-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+    
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 60px 32px 32px;
+    }
+    
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+    
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    
+    .footer-section h4 {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-section a {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+      color: var(--gold);
+    }
+    
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 20px;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .board-grid,
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="The Elévara Foundation">
+        <span>THE ELÉVARA FOUNDATION</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html" class="active">Our Mission</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="donate.html" class="donate-btn-nav">Donate</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Access Over<br>Everything</h1>
+    <p>
+      We believe talent is everywhere — opportunity is not. The Elévara Foundation exists to change that by removing financial barriers for emerging creative talent and entrepreneurs building the creative economy.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-content">
+      <div class="section-label">Why We Exist</div>
+      <h2>Our Mission</h2>
+      <p class="lead">
+        The creative economy is built on talent, but access to professional opportunities remains limited by financial barriers. We fund the entire ecosystem — not just models and creators, but the studios, agencies, and spaces that support them.
+      </p>
+      
+      <div class="content-block">
+        Every year, thousands of aspiring models can't afford professional portfolio shoots. Talented photographers lack the capital to launch studios. UGC creators go without equipment. Entrepreneurs with vision for talent-supporting businesses can't secure startup funding. The Elévara Foundation removes these barriers.
+      </div>
+      
+      <div class="content-block">
+        We provide portfolio grants, business startup capital, equipment loans, rent subsidies for creative spaces, and professional mentorship. Our recipients don't just get money — they get access to a network of established professionals, strategic guidance, and the resources to build sustainable careers.
+      </div>
+      
+      <div class="content-block">
+        Founded in 2026, we operate with complete financial transparency, independent governance, and a commitment to measuring real outcomes. 100% of donated funds go directly to program costs. Our board meets quarterly to review applications, award grants, and track recipient success.
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-content">
+      <div class="section-label">Leadership</div>
+      <h2>Board of Directors</h2>
+      <p class="lead">
+        Our board brings deep creative industry experience, nonprofit expertise, and a shared commitment to creating access for emerging talent.
+      </p>
+      
+      <div class="board-grid">
+        <div class="board-member">
+          <div class="board-photo">K</div>
+          <h3>Kevin [Last Name]</h3>
+          <div class="board-title">Founder & Chair</div>
+          <p class="board-bio">
+            Founder of House of Elévara and Elyra Editorial. Built The Atelier platform to create professional booking infrastructure for creative talent. Established the Foundation to fund the next generation of models, creators, and entrepreneurs.
+          </p>
+        </div>
+        
+        <div class="board-member">
+          <div class="board-photo">?</div>
+          <h3>Board Member</h3>
+          <div class="board-title">Creative Industry Advisor</div>
+          <p class="board-bio">
+            [Placeholder for photographer, former model, or creative director with 10+ years industry experience. Reviews portfolio grant applications and provides mentorship to recipients.]
+          </p>
+        </div>
+        
+        <div class="board-member">
+          <div class="board-photo">?</div>
+          <h3>Board Member</h3>
+          <div class="board-title">Finance & Operations</div>
+          <p class="board-bio">
+            [Placeholder for nonprofit finance expert or business leader. Oversees financial reporting, grant disbursement processes, and ensures operational efficiency and compliance.]
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-content">
+      <div class="section-label">What Guides Us</div>
+      <h2>Our Values</h2>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Transparency</h3>
+          <p>We publish annual financial reports, recipient demographics, and program outcomes. Every donor deserves to see exactly where their money goes and what impact it creates.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Equity</h3>
+          <p>We prioritize talent from underrepresented backgrounds, geographic regions without creative infrastructure, and first-generation creatives without industry connections or financial safety nets.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Ecosystem Thinking</h3>
+          <p>Funding talent alone isn't enough. We invest in photographers, studios, agencies, and creative spaces that create opportunities and infrastructure for emerging talent.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Measurable Impact</h3>
+          <p>We track portfolio completion rates, bookings secured, income earned, and businesses launched. Grants are investments — we measure return in careers built and opportunities created.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Long-Term Support</h3>
+          <p>Recipients join our network for life. We provide ongoing mentorship, professional introductions, and access to The Atelier platform to ensure sustained success beyond the initial grant.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>No Overhead</h3>
+          <p>100% of donations go to programs. The Foundation operates with no salaries, no administrative overhead, and no wasteful spending. Every dollar funds a grant, equipment purchase, or mentorship stipend.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-content">
+      <div class="section-label">Accountability</div>
+      <h2>Financial Transparency</h2>
+      <p class="lead">
+        We operate with complete openness. Donors, applicants, and the public deserve to see how we operate, where money goes, and what outcomes we achieve.
+      </p>
+      
+      <div class="content-block">
+        <strong>Independent Operation:</strong> The Elévara Foundation is a separate 501(c)(3) entity from House of Elévara LLC. We have our own EIN, bank account, board of directors, and governance structure. This ensures donations are tax-deductible and funds are used exclusively for charitable purposes.
+      </div>
+      
+      <div class="content-block">
+        <strong>Annual Reporting:</strong> Each year we publish a detailed impact report showing total grants awarded, recipient demographics, program outcomes, and full financial statements. These reports are available to the public on our website.
+      </div>
+      
+      <div class="content-block">
+        <strong>Quarterly Board Meetings:</strong> Our board meets four times per year to review applications, approve grants, evaluate program effectiveness, and ensure we're serving our mission. Meeting minutes are documented and available upon request.
+      </div>
+      
+      <div class="content-block">
+        <strong>100% to Programs:</strong> Administrative costs (filing fees, legal compliance, website hosting) are covered separately. Every donated dollar funds portfolio shoots, business grants, equipment purchases, space rent subsidies, or mentorship stipends.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>THE ELÉVARA FOUNDATION</h3>
+        <p>A 501(c)(3) nonprofit organization removing financial barriers for emerging creative talent and entrepreneurs building the creative economy.</p>
+        <p style="font-size: 12px; color: var(--gold); letter-spacing: 0.06em; margin-top: 20px;">
+          EIN: [Pending 501(c)(3) Application]
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#portfolio">Portfolio Grants</a></li>
+          <li><a href="programs.html#business">Business Grants</a></li>
+          <li><a href="programs.html#booking">First Booking Fund</a></li>
+          <li><a href="programs.html#equipment">Equipment Library</a></li>
+          <li><a href="programs.html#space">Space Grants</a></li>
+          <li><a href="programs.html#mentorship">Mentorship</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="donate.html">Make a Donation</a></li>
+          <li><a href="apply.html">Apply for Support</a></li>
+          <li><a href="contact.html">Corporate Partnership</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Foundation</h4>
+        <ul>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="impact.html">Impact Reports</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 The Elévara Foundation. All rights reserved.</p>
+      <p style="font-size: 13px; color: var(--gold); letter-spacing: 0.06em;">foundation@elevarafoundation.org · 501(c)(3) Pending</p>
+    </div>
+  </footer>
+
+</body>
+</html>

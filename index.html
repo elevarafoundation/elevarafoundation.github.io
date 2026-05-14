@@ -4,7 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Elévara Foundation | Building the Creative Economy</title>
-  <meta name="description" content="The Elévara Foundation removes financial barriers for emerging creative talent and entrepreneurs building the creative economy. Portfolio grants, business capital, and professional access.">
+  <meta name="description" content="The Elévara Foundation removes financial barriers for emerging creative talent and entrepreneurs. Portfolio grants, business capital, and professional access.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="The Elévara Foundation | Building the Creative Economy">
+  <meta property="og:description" content="501(c)(3) nonprofit removing financial barriers for emerging creative talent and entrepreneurs. Portfolio grants, business capital, equipment access, and mentorship.">
+  <meta property="og:image" content="https://elevarafoundation.org/logo.png">
+  <meta property="og:url" content="https://elevarafoundation.org">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Elévara Foundation | Building the Creative Economy">
+  <meta name="twitter:description" content="Portfolio grants, business capital, equipment access, and mentorship for emerging creative talent.">
+  <meta name="twitter:image" content="https://elevarafoundation.org/logo.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,16 +85,27 @@
     }
     
     .logo {
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
       text-decoration: none;
       transition: all 0.3s ease;
     }
     
-    .logo:hover {
+    .logo img {
+      height: 36px;
+      width: auto;
+    }
+    
+    .logo span {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+    
+    .logo:hover span {
       color: var(--gold-bright);
       letter-spacing: 0.12em;
     }
@@ -674,6 +700,14 @@
         height: 70px;
       }
       
+      .logo span {
+        font-size: 14px;
+      }
+      
+      .logo img {
+        height: 30px;
+      }
+      
       .nav-links {
         display: none;
       }
@@ -710,7 +744,10 @@
   <!-- HEADER -->
   <header>
     <nav>
-      <a href="index.html" class="logo">THE ELÉVARA FOUNDATION</a>
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="The Elévara Foundation">
+        <span>THE ELÉVARA FOUNDATION</span>
+      </a>
       <ul class="nav-links">
         <li><a href="mission.html">Our Mission</a></li>
         <li><a href="programs.html">Programs</a></li>
@@ -937,8 +974,7 @@
         <ul>
           <li><a href="donate.html">Make a Donation</a></li>
           <li><a href="apply.html">Apply for Support</a></li>
-          <li><a href="volunteer.html">Volunteer</a></li>
-          <li><a href="partners.html">Corporate Partnership</a></li>
+          <li><a href="contact.html">Corporate Partnership</a></li>
         </ul>
       </div>
       
@@ -946,7 +982,7 @@
         <h4>Foundation</h4>
         <ul>
           <li><a href="mission.html">Our Mission</a></li>
-          <li><a href="board.html">Board of Directors</a></li>
+          <li><a href="programs.html">Programs</a></li>
           <li><a href="impact.html">Impact Reports</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>

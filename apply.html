@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apply for Support | The Elévara Foundation</title>
-  <meta name="description" content="Apply for portfolio grants, business capital, equipment loans, space grants, or mentorship. Applications reviewed quarterly.">
+  <title>Apply | The Elévara Foundation</title>
+  <meta name="description" content="Apply for portfolio grants, business capital, equipment access, or mentorship. The Elévara Foundation supports emerging creative talent.">
   
   <link rel="icon" type="image/png" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
   
-  <meta property="og:title" content="The Elévara Foundation | Apply for Support">
-  <meta property="og:description" content="Portfolio grants, business capital, equipment access, space grants, and mentorship for emerging creative talent.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Apply | The Elévara Foundation">
+  <meta property="og:description" content="Apply for grants and support programs for emerging creative talent.">
   <meta property="og:image" content="https://elevarafoundation.org/logo.png">
   <meta property="og:url" content="https://elevarafoundation.org/apply.html">
   <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Elévara Foundation | Apply for Support">
-  <meta name="twitter:description" content="Applications open for portfolio grants, business capital, and mentorship programs.">
+  <meta name="twitter:title" content="Apply | The Elévara Foundation">
+  <meta name="twitter:description" content="Apply for grants and support programs for emerging creative talent.">
   <meta name="twitter:image" content="https://elevarafoundation.org/logo.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,17 +26,414 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --gold: #C8A95A; --gold-dim: rgba(200, 169, 90, 0.12); --gold-bright: #D4B76A;
-      --charcoal: #0A0A09; --surface: #141413; --surface-elevated: #1C1C1A;
-      --cream: #F5F1E8; --text: #E8E6E1; --text-muted: #A8A6A1;
-      --border: rgba(200, 169, 90, 0.15);
-      --font-display: 'Cormorant Garamond', serif; --font-body: 'Source Serif 4', serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    body { font-family: var(--font-body); background: var(--charcoal); color: var(--text); line-height: 1.7; }
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 10, 9, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-    nav { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+    
+    :root {
+      --gold: #C8A95A;
+      --gold-dim: rgba(200, 169, 90, 0.12);
+      --gold-bright: #D4B76A;
+      --charcoal: #0A0A09;
+      --surface: #141413;
+      --surface-elevated: #1C1C1A;
+      --cream: #F5F1E8;
+      --text: #E8E6E1;
+      --text-muted: #A8A6A1;
+      --border: rgba(200, 169, 90, 0.15);
+      
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Source Serif 4', serif;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--charcoal);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 9, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
+    
+    .logo span {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      transition: all 0.3s ease;
+    }
+    
+    .logo:hover span {
+      color: var(--gold-bright);
+    }
+    
+    .hero {
+      margin-top: 80px;
+      padding: 100px 32px 60px;
+      background: linear-gradient(135deg, var(--charcoal) 0%, #0F0F0E 100%);
+      text-align: center;
+    }
+    
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 6vw, 64px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .form-section {
+      padding: 80px 32px;
+      background: var(--surface);
+    }
+    
+    .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .application-form {
+      background: var(--charcoal);
+      border: 1px solid var(--border);
+      padding: 48px;
+    }
+    
+    .form-group {
+      margin-bottom: 28px;
+    }
+    
+    .form-label {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 15px;
+      font-family: var(--font-body);
+      transition: all 0.3s ease;
+    }
+    
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: var(--surface);
+    }
+    
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .checkbox-group {
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .checkbox-group h3 {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    
+    .checkbox-item {
+      margin-bottom: 12px;
+    }
+    
+    .checkbox-item input {
+      margin-right: 10px;
+    }
+    
+    .checkbox-item label {
+      font-size: 15px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 18px 40px;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: var(--font-body);
+      margin-top: 32px;
+    }
+    
+    .submit-btn:hover {
+      background: var(--gold-bright);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(200, 169, 90, 0.4);
+    }
+    
+    .form-note {
+      margin-top: 24px;
+      padding: 20px;
+      background: var(--surface);
+      border-left: 3px solid var(--gold);
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+    }
+    
+    footer p {
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+    
+    .footer-contact {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+    
+    .footer-contact a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-contact a:hover {
+      color: var(--gold-bright);
+    }
+    
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .application-form {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="The Elévara Foundation">
+        <span>THE ELÉVARA FOUNDATION</span>
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-label">Apply for Support</div>
+    <h1>Ready to Launch<br>Your Career?</h1>
+    <p>Apply for portfolio grants, business capital, equipment access, or mentorship. We review applications on a rolling basis and respond within 2 weeks.</p>
+  </section>
+
+  <section class="form-section">
+    <div class="form-container">
+      
+      <form action="https://formsubmit.co/foundation@elevarafoundation.org" method="POST" class="application-form">
+        
+        <!-- FormSubmit Config -->
+        <input type="hidden" name="_subject" value="New Foundation Application">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        
+        <!-- Personal Information -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" name="First Name" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" name="Last Name" class="form-input" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" name="Email" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="tel" name="Phone" class="form-input" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">City, State</label>
+          <input type="text" name="Location" class="form-input" placeholder="Dallas, TX" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Age</label>
+          <input type="number" name="Age" class="form-input" min="18" max="100" required>
+        </div>
+        
+        <!-- Program Selection -->
+        <div class="checkbox-group">
+          <h3>Programs You're Applying For</h3>
+          <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Select all that apply</p>
+          
+          <div class="checkbox-item">
+            <input type="checkbox" id="portfolio" name="Program: Portfolio Grant" value="Yes">
+            <label for="portfolio">Portfolio Grant ($500–$2,000)</label>
+          </div>
+          
+          <div class="checkbox-item">
+            <input type="checkbox" id="business" name="Program: Business Grant" value="Yes">
+            <label for="business">Business Startup Grant ($1,000–$5,000)</label>
+          </div>
+          
+          <div class="checkbox-item">
+            <input type="checkbox" id="equipment" name="Program: Equipment Library" value="Yes">
+            <label for="equipment">Equipment Library Access (30–90 day loans)</label>
+          </div>
+          
+          <div class="checkbox-item">
+            <input type="checkbox" id="mentorship" name="Program: Mentorship" value="Yes">
+            <label for="mentorship">Mentorship & Workshops (Free)</label>
+          </div>
+        </div>
+        
+        <!-- Application Details -->
+        <div class="form-group" style="margin-top: 32px;">
+          <label class="form-label">Tell Us About Yourself</label>
+          <textarea name="About" class="form-textarea" placeholder="What do you do? What are your creative goals? Why are you applying?" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Why Do You Need Support?</label>
+          <textarea name="Why Support Needed" class="form-textarea" placeholder="Explain your financial situation and why this grant/support would help" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Portfolio or Work Samples (Optional)</label>
+          <input type="url" name="Portfolio Link" class="form-input" placeholder="Instagram, website, or portfolio link">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">How Did You Hear About Us?</label>
+          <select name="Referral Source" class="form-select">
+            <option value="">Select one...</option>
+            <option value="Social Media">Social Media</option>
+            <option value="Friend/Colleague">Friend or Colleague</option>
+            <option value="Google Search">Google Search</option>
+            <option value="Industry Event">Industry Event</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit Application</button>
+        
+        <div class="form-note">
+          <strong>What happens next?</strong> We review applications on a rolling basis. You'll hear from us within 2 weeks. If selected, we'll schedule a brief phone or video interview to discuss your goals and confirm details.
+        </div>
+      </form>
+      
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 The Elévara Foundation. All rights reserved.</p>
+    <p class="footer-contact">
+      <a href="mailto:foundation@elevarafoundation.org">foundation@elevarafoundation.org</a> · 
+      <a href="tel:+17063630811">(706) 363-0811</a> · 
+      501(c)(3) Pending
+    </p>
+  </footer>
+
+</body>
+</html>    nav { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
     .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; transition: all 0.3s ease; }
     .logo img { height: 36px; width: auto; }
     .logo span { font-family: var(--font-display); font-size: 16px; font-weight: 300; letter-spacing: 0.08em; color: var(--gold); }

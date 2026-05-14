@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Elévara Foundation | Building the Creative Economy</title>
+  <meta name="description" content="The Elévara Foundation removes financial barriers for emerging creative talent and entrepreneurs building the creative economy. Portfolio grants, business capital, and professional access.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --gold: #C8A95A;
+      --gold-dim: rgba(200, 169, 90, 0.12);
+      --gold-bright: #D4B76A;
+      --charcoal: #0A0A09;
+      --surface: #141413;
+      --surface-elevated: #1C1C1A;
+      --cream: #F5F1E8;
+      --text: #E8E6E1;
+      --text-muted: #A8A6A1;
+      --border: rgba(200, 169, 90, 0.15);
+      
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Source Serif 4', serif;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--charcoal);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 9, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      animation: slideDown 0.6s ease-out;
+    }
+    
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+    
+    .logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .logo:hover {
+      color: var(--gold-bright);
+      letter-spacing: 0.12em;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 300;
+    }
+    
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+    
+    .donate-btn-nav {
+      padding: 10px 24px;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+    
+    .donate-btn-nav:hover {
+      background: var(--gold-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 169, 90, 0.3);
+    }
+    
+    /* HERO */
+    .hero {
+      margin-top: 80px;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--charcoal) 0%, #0F0F0E 100%);
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(ellipse at top right, rgba(200, 169, 90, 0.08), transparent 60%);
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 100px 32px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(18px, 2.5vw, 24px);
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 48px;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.8s forwards;
+    }
+    
+    .btn {
+      padding: 16px 40px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-family: var(--font-body);
+    }
+    
+    .btn-primary {
+      background: var(--gold);
+      color: var(--charcoal);
+    }
+    
+    .btn-primary:hover {
+      background: var(--gold-bright);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(200, 169, 90, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gold-dim);
+      transform: translateY(-3px);
+    }
+    
+    /* IMPACT STATS */
+    .impact-stats {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 32px;
+    }
+    
+    .impact-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 60px;
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 64px;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    
+    /* MISSION SECTION */
+    .mission {
+      padding: 120px 32px;
+      background: linear-gradient(180deg, var(--charcoal) 0%, var(--surface) 100%);
+    }
+    
+    .mission-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    
+    .mission h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--cream);
+      margin-bottom: 32px;
+    }
+    
+    .mission p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    
+    /* PROGRAMS */
+    .programs {
+      padding: 120px 32px;
+      background: var(--charcoal);
+    }
+    
+    .programs-header {
+      max-width: 1200px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+    
+    .programs h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+    
+    .programs-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+    
+    .program-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 48px 40px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    
+    .program-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .program-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      background: var(--surface-elevated);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    
+    .program-icon {
+      font-size: 48px;
+      margin-bottom: 24px;
+      display: block;
+    }
+    
+    .program-card h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    
+    .program-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    
+    .program-amount {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      color: var(--gold-bright);
+      font-weight: 600;
+    }
+    
+    /* DONATION TIERS */
+    .donation-tiers {
+      padding: 120px 32px;
+      background: linear-gradient(180deg, var(--surface) 0%, var(--charcoal) 100%);
+    }
+    
+    .donation-tiers-header {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+    
+    .donation-tiers h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+    
+    .donation-tiers p {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    
+    .tiers-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+    }
+    
+    .tier {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 32px;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .tier:hover {
+      border-color: var(--gold);
+      background: var(--surface-elevated);
+      transform: translateX(8px);
+    }
+    
+    .tier-amount {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    
+    .tier-content h3 {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .tier-content p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .tier-donate {
+      padding: 12px 28px;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      font-family: var(--font-body);
+    }
+    
+    .tier-donate:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+    }
+    
+    /* TESTIMONIAL / TRUST */
+    .trust {
+      padding: 120px 32px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .trust-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .trust h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 48px;
+      line-height: 1.4;
+    }
+    
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 48px;
+      margin-top: 60px;
+    }
+    
+    .trust-item h3 {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .trust-item p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    
+    /* CTA SECTION */
+    .cta-section {
+      padding: 120px 32px;
+      background: linear-gradient(135deg, #0F0F0E 0%, var(--charcoal) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(200, 169, 90, 0.1), transparent 70%);
+      pointer-events: none;
+    }
+    
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+    
+    .cta-section p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 60px 32px 32px;
+    }
+    
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+    
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    
+    .footer-section h4 {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-section a {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+      color: var(--gold);
+    }
+    
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    .footer-ein {
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 20px;
+        height: 70px;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .hero-content {
+        padding: 60px 20px;
+      }
+      
+      .programs-grid,
+      .tiers-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .tier {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">THE ELÉVARA FOUNDATION</a>
+      <ul class="nav-links">
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="donate.html" class="donate-btn-nav">Donate</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-label">501(c)(3) Nonprofit Organization</div>
+      <h1>Build the<br>Creative Economy</h1>
+      <p class="hero-subtitle">
+        We remove financial barriers for emerging creative talent and entrepreneurs building businesses that support talent. Every donation funds portfolio shoots, business capital, equipment access, and professional mentorship.
+      </p>
+      <div class="hero-cta">
+        <a href="donate.html" class="btn btn-primary">Make a Donation</a>
+        <a href="programs.html" class="btn btn-secondary">Our Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT STATS -->
+  <section class="impact-stats">
+    <div class="impact-grid">
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Grants Awarded</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">$0</div>
+        <div class="stat-label">Total Distributed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Careers Launched</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Businesses Funded</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="mission-content">
+      <div class="section-label">Our Mission</div>
+      <h2>Access Over Everything</h2>
+      <p>
+        Talent is everywhere. Opportunity is not. The Elévara Foundation exists to change that — funding models who need professional portfolios, creators who can't afford equipment, photographers launching studios, and entrepreneurs building the infrastructure the creative economy needs.
+      </p>
+      <p>
+        We don't just fund talent. We fund the entire ecosystem.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="programs">
+    <div class="programs-header">
+      <div class="section-label">How We Create Access</div>
+      <h2>Six Core Programs</h2>
+    </div>
+    
+    <div class="programs-grid">
+      <div class="program-card">
+        <span class="program-icon">📸</span>
+        <h3>Portfolio Grants</h3>
+        <p>Professional portfolio shoots for emerging models and talent. Covers photographer, hair, makeup, studio costs, and retouching.</p>
+        <div class="program-amount">$500 – $2,000</div>
+      </div>
+      
+      <div class="program-card">
+        <span class="program-icon">🚀</span>
+        <h3>Business Startup Grants</h3>
+        <p>Capital for entrepreneurs launching photography studios, casting agencies, creative spaces, and talent-supporting businesses.</p>
+        <div class="program-amount">$1,000 – $5,000</div>
+      </div>
+      
+      <div class="program-card">
+        <span class="program-icon">🎯</span>
+        <h3>First Booking Fund</h3>
+        <p>Waived platform fees on recipients' first three professional bookings. They keep 100% until established.</p>
+        <div class="program-amount">Free Access</div>
+      </div>
+      
+      <div class="program-card">
+        <span class="program-icon">📹</span>
+        <h3>Equipment Library</h3>
+        <p>Free 30–90 day equipment loans for creators and studios. Cameras, lighting, backdrops, and audio gear.</p>
+        <div class="program-amount">No-Cost Loans</div>
+      </div>
+      
+      <div class="program-card">
+        <span class="program-icon">🏢</span>
+        <h3>Space Grants</h3>
+        <p>3–6 month rent subsidies for creative studios and production spaces serving emerging talent at accessible rates.</p>
+        <div class="program-amount">Up to 50% Rent</div>
+      </div>
+      
+      <div class="program-card">
+        <span class="program-icon">🎓</span>
+        <h3>Mentorship & Workshops</h3>
+        <p>Free workshops and 1-on-1 mentorship from established professionals in the creative industry.</p>
+        <div class="program-amount">Open Access</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATION TIERS -->
+  <section class="donation-tiers">
+    <div class="donation-tiers-header">
+      <div class="section-label">Invest in Access</div>
+      <h2>Your Donation Creates Opportunity</h2>
+      <p>100% of donations go directly to program costs. Every dollar funds real portfolios, real equipment, real businesses, and real careers.</p>
+    </div>
+    
+    <div class="tiers-grid">
+      <div class="tier">
+        <div class="tier-amount">$100</div>
+        <div class="tier-content">
+          <h3>Portfolio Support</h3>
+          <p>Covers professional hair and makeup for one recipient's portfolio shoot</p>
+        </div>
+        <button class="tier-donate" onclick="window.location.href='donate.html?amount=100'">Donate</button>
+      </div>
+      
+      <div class="tier">
+        <div class="tier-amount">$500</div>
+        <div class="tier-content">
+          <h3>Full Portfolio Grant</h3>
+          <p>Funds a complete professional portfolio shoot for one emerging model</p>
+        </div>
+        <button class="tier-donate" onclick="window.location.href='donate.html?amount=500'">Donate</button>
+      </div>
+      
+      <div class="tier">
+        <div class="tier-amount">$1,500</div>
+        <div class="tier-content">
+          <h3>Equipment Fund</h3>
+          <p>Purchases one camera + lighting kit for our Equipment Library</p>
+        </div>
+        <button class="tier-donate" onclick="window.location.href='donate.html?amount=1500'">Donate</button>
+      </div>
+      
+      <div class="tier">
+        <div class="tier-amount">$5,000</div>
+        <div class="tier-content">
+          <h3>Program Sponsor</h3>
+          <p>Funds 10 complete portfolio grants or sponsors an entire workshop series</p>
+        </div>
+        <button class="tier-donate" onclick="window.location.href='donate.html?amount=5000'">Donate</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST SIGNALS -->
+  <section class="trust">
+    <div class="trust-content">
+      <div class="section-label">Transparency & Accountability</div>
+      <h2>We operate with complete financial transparency and independent governance</h2>
+      
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>Independent Operation</h3>
+          <p>The Foundation is a separate 501(c)(3) entity with its own board, finances, and governance structure.</p>
+        </div>
+        
+        <div class="trust-item">
+          <h3>100% to Programs</h3>
+          <p>All donated funds go directly to grants, equipment, mentorship stipends, and workshop production.</p>
+        </div>
+        
+        <div class="trust-item">
+          <h3>Public Reporting</h3>
+          <p>Annual impact reports published with full financials, recipient demographics, and program outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Help Build the<br>Creative Economy</h2>
+      <p>Your donation creates access for emerging talent and entrepreneurs who have the vision but not the resources. Every dollar goes directly to funding portfolios, equipment, business capital, and mentorship.</p>
+      <div class="cta-buttons">
+        <a href="donate.html" class="btn btn-primary">Make a Donation</a>
+        <a href="apply.html" class="btn btn-secondary">Apply for Support</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>THE ELÉVARA FOUNDATION</h3>
+        <p>A 501(c)(3) nonprofit organization removing financial barriers for emerging creative talent and entrepreneurs building the creative economy.</p>
+        <p style="font-size: 12px; color: var(--gold); letter-spacing: 0.06em; margin-top: 20px;">
+          EIN: [Pending 501(c)(3) Application]
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#portfolio">Portfolio Grants</a></li>
+          <li><a href="programs.html#business">Business Grants</a></li>
+          <li><a href="programs.html#booking">First Booking Fund</a></li>
+          <li><a href="programs.html#equipment">Equipment Library</a></li>
+          <li><a href="programs.html#space">Space Grants</a></li>
+          <li><a href="programs.html#mentorship">Mentorship</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="donate.html">Make a Donation</a></li>
+          <li><a href="apply.html">Apply for Support</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="partners.html">Corporate Partnership</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Foundation</h4>
+        <ul>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="board.html">Board of Directors</a></li>
+          <li><a href="impact.html">Impact Reports</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 The Elévara Foundation. All rights reserved.</p>
+      <p class="footer-ein">foundation@elevarafoundation.org · 501(c)(3) Pending</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -79,11 +79,15 @@
     .footer-section a:hover { color: var(--gold); }
     .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
     .footer-bottom p { font-size: 13px; color: var(--text-muted); }
+    .footer-contact { font-size: 13px; color: var(--gold); letter-spacing: 0.06em; }
+    .footer-contact a { color: var(--gold); text-decoration: none; transition: color 0.3s ease; }
+    .footer-contact a:hover { color: var(--gold-bright); }
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .stats-grid, .transparency-grid { grid-template-columns: 1fr; }
       .footer-content { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -227,7 +231,7 @@
       <div class="footer-brand">
         <h3>THE ELÉVARA FOUNDATION</h3>
         <p>A 501(c)(3) nonprofit organization removing financial barriers for emerging creative talent and entrepreneurs building the creative economy.</p>
-        <p style="font-size: 12px; color: var(--gold); letter-spacing: 0.06em; margin-top: 20px;">EIN: [Pending 501(c)(3) Application]</p>
+        <p style="font-size: 12px; color: var(--gold); letter-spacing: 0.06em; margin-top: 20px;">EIN: Pending 501(c)(3) Application</p>
       </div>
       <div class="footer-section">
         <h4>Programs</h4>
@@ -260,7 +264,11 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 The Elévara Foundation. All rights reserved.</p>
-      <p style="font-size: 13px; color: var(--gold); letter-spacing: 0.06em;">foundation@elevarafoundation.org · 501(c)(3) Pending</p>
+      <p class="footer-contact">
+        <a href="mailto:foundation@elevarafoundation.org">foundation@elevarafoundation.org</a> · 
+        <a href="tel:+17063630811">(706) 363-0811</a> · 
+        501(c)(3) Pending
+      </p>
     </div>
   </footer>
 

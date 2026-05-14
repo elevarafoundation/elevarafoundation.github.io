@@ -4,19 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programs | The Elévara Foundation</title>
-  <meta name="description" content="Six programs removing financial barriers: Portfolio Grants, Business Startup Grants, First Booking Fund, Equipment Library, Space Grants, and Mentorship.">
+  <meta name="description" content="Portfolio grants, business capital, equipment access, and mentorship for emerging creative talent. Learn about our six core programs.">
   
   <link rel="icon" type="image/png" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
   
-  <meta property="og:title" content="The Elévara Foundation | Our Programs">
-  <meta property="og:description" content="Portfolio grants, business capital, equipment access, space grants, and mentorship for emerging creative talent.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Programs | The Elévara Foundation">
+  <meta property="og:description" content="Six programs removing financial barriers for creative talent and entrepreneurs.">
   <meta property="og:image" content="https://elevarafoundation.org/logo.png">
   <meta property="og:url" content="https://elevarafoundation.org/programs.html">
   <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Elévara Foundation | Our Programs">
-  <meta name="twitter:description" content="Six programs creating access: Portfolio Grants, Business Grants, Equipment Library, Space Grants, Mentorship.">
+  <meta name="twitter:title" content="Programs | The Elévara Foundation">
+  <meta name="twitter:description" content="Six programs removing financial barriers for creative talent and entrepreneurs.">
   <meta name="twitter:image" content="https://elevarafoundation.org/logo.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,72 +26,263 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --gold: #C8A95A; --gold-dim: rgba(200, 169, 90, 0.12); --gold-bright: #D4B76A;
-      --charcoal: #0A0A09; --surface: #141413; --surface-elevated: #1C1C1A;
-      --cream: #F5F1E8; --text: #E8E6E1; --text-muted: #A8A6A1;
-      --border: rgba(200, 169, 90, 0.15);
-      --font-display: 'Cormorant Garamond', serif; --font-body: 'Source Serif 4', serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    body { font-family: var(--font-body); background: var(--charcoal); color: var(--text); line-height: 1.7; }
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 10, 9, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-    nav { max-width: 1400px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
-    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; transition: all 0.3s ease; }
-    .logo img { height: 36px; width: auto; }
-    .logo span { font-family: var(--font-display); font-size: 16px; font-weight: 300; letter-spacing: 0.08em; color: var(--gold); }
-    .logo:hover span { color: var(--gold-bright); }
-    .nav-links { display: flex; gap: 40px; list-style: none; }
-    .nav-links a { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 300; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    .donate-btn-nav { padding: 10px 24px; background: var(--gold); color: var(--charcoal); border: none; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; font-family: var(--font-body); }
-    .donate-btn-nav:hover { background: var(--gold-bright); transform: translateY(-2px); }
-    .hero { margin-top: 80px; padding: 100px 32px 60px; background: linear-gradient(135deg, var(--charcoal) 0%, #0F0F0E 100%); text-align: center; }
-    .hero h1 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 72px); font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 24px; }
-    .hero p { font-size: 18px; line-height: 1.7; color: var(--text-muted); max-width: 800px; margin: 0 auto; }
-    .program-section { padding: 100px 32px; scroll-margin-top: 80px; }
-    .program-section:nth-child(even) { background: var(--surface); }
-    .program-container { max-width: 1100px; margin: 0 auto; }
-    .program-header { display: flex; align-items: center; gap: 24px; margin-bottom: 40px; }
-    .program-icon { font-size: 64px; flex-shrink: 0; }
-    .program-title-block h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 300; color: var(--gold); margin-bottom: 12px; text-align: left; }
-    .program-amount { font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-bright); font-weight: 600; }
-    .program-content { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; align-items: start; }
-    .program-main p { font-size: 17px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px; }
-    .program-sidebar { background: var(--surface-elevated); border: 1px solid var(--border); padding: 32px 28px; border-left: 4px solid var(--gold); }
-    .sidebar-section { margin-bottom: 28px; }
-    .sidebar-section:last-child { margin-bottom: 0; }
-    .sidebar-section h3 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; font-weight: 600; }
-    .sidebar-section ul { list-style: none; padding-left: 0; }
-    .sidebar-section li { font-size: 14px; color: var(--text-muted); line-height: 1.7; padding-left: 20px; position: relative; margin-bottom: 8px; }
-    .sidebar-section li::before { content: '→'; position: absolute; left: 0; color: var(--gold); }
-    .sidebar-section p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
-    .cta-section { padding: 80px 32px; background: linear-gradient(135deg, #0F0F0E 0%, var(--charcoal) 100%); text-align: center; border-top: 1px solid var(--border); }
-    .cta-section h2 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px); font-weight: 300; color: var(--cream); margin-bottom: 32px; text-align: center; }
-    .cta-section p { font-size: 17px; color: var(--text-muted); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
-    .btn { padding: 16px 40px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block; font-family: var(--font-body); }
-    .btn-primary { background: var(--gold); color: var(--charcoal); margin-right: 16px; }
-    .btn-primary:hover { background: var(--gold-bright); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(200, 169, 90, 0.4); }
-    .btn-secondary { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
-    .btn-secondary:hover { background: var(--gold-dim); transform: translateY(-3px); }
-    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 60px 32px 32px; }
-    .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
-    .footer-brand h3 { font-family: var(--font-display); font-size: 20px; font-weight: 300; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 16px; }
-    .footer-brand p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
-    .footer-section h4 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 600; }
-    .footer-section ul { list-style: none; }
-    .footer-section li { margin-bottom: 12px; }
-    .footer-section a { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; }
-    .footer-section a:hover { color: var(--gold); }
-    .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-    .footer-bottom p { font-size: 13px; color: var(--text-muted); }
+    
+    :root {
+      --gold: #C8A95A;
+      --gold-dim: rgba(200, 169, 90, 0.12);
+      --gold-bright: #D4B76A;
+      --charcoal: #0A0A09;
+      --surface: #141413;
+      --surface-elevated: #1C1C1A;
+      --cream: #F5F1E8;
+      --text: #E8E6E1;
+      --text-muted: #A8A6A1;
+      --border: rgba(200, 169, 90, 0.15);
+      
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Source Serif 4', serif;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--charcoal);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 9, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
+    
+    .logo span {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      transition: all 0.3s ease;
+    }
+    
+    .logo:hover span {
+      color: var(--gold-bright);
+    }
+    
+    .hero {
+      margin-top: 80px;
+      padding: 120px 32px 80px;
+      background: linear-gradient(135deg, var(--charcoal) 0%, #0F0F0E 100%);
+      text-align: center;
+    }
+    
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 6vw, 72px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 32px;
+    }
+    
+    .hero p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .programs-section {
+      padding: 80px 32px;
+      background: var(--surface);
+    }
+    
+    .programs-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .program-detail {
+      background: var(--charcoal);
+      border: 1px solid var(--border);
+      padding: 60px 48px;
+      margin-bottom: 32px;
+      transition: all 0.3s ease;
+    }
+    
+    .program-detail:hover {
+      border-color: var(--gold);
+      transform: translateX(8px);
+    }
+    
+    .program-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .program-icon {
+      font-size: 56px;
+      margin-bottom: 16px;
+    }
+    
+    .program-title {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    
+    .program-amount {
+      font-size: 18px;
+      color: var(--gold-bright);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    
+    .program-description {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    
+    .program-details h3 {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    
+    .program-details ul {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    
+    .program-details li {
+      padding-left: 24px;
+      margin-bottom: 12px;
+      position: relative;
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+    
+    .program-details li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: bold;
+    }
+    
+    .apply-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+    
+    .apply-btn:hover {
+      background: var(--gold-bright);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(200, 169, 90, 0.4);
+    }
+    
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+    }
+    
+    footer p {
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+    
+    .footer-contact {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+    
+    .footer-contact a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-contact a:hover {
+      color: var(--gold-bright);
+    }
+    
     @media (max-width: 768px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
-      .program-header { flex-direction: column; text-align: center; }
-      .program-title-block h2 { text-align: center; }
-      .program-content { grid-template-columns: 1fr; }
-      .footer-content { grid-template-columns: 1fr; }
+      .program-header {
+        flex-direction: column;
+        gap: 16px;
+      }
+      
+      .program-detail {
+        padding: 40px 28px;
+      }
     }
   </style>
 </head>
@@ -101,309 +294,215 @@
         <img src="logo.png" alt="The Elévara Foundation">
         <span>THE ELÉVARA FOUNDATION</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="mission.html">Our Mission</a></li>
-        <li><a href="programs.html" class="active">Programs</a></li>
-        <li><a href="apply.html">Apply</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <a href="donate.html" class="donate-btn-nav">Donate</a>
     </nav>
   </header>
 
   <section class="hero">
+    <div class="hero-label">Our Programs</div>
     <h1>Six Ways We<br>Create Access</h1>
-    <p>From portfolio shoots to business capital to equipment loans — we fund the entire creative ecosystem. Each program removes a specific barrier standing between talent and opportunity.</p>
+    <p>From portfolio grants to business capital to equipment access—we fund the entire creative ecosystem, removing financial barriers at every stage of the journey.</p>
   </section>
 
-  <section class="program-section" id="portfolio">
-    <div class="program-container">
-      <div class="program-header">
-        <span class="program-icon">📸</span>
-        <div class="program-title-block">
-          <h2>Portfolio Grants</h2>
-          <div class="program-amount">$500 – $2,000 per grant</div>
+  <section class="programs-section">
+    <div class="programs-container">
+      
+      <!-- PORTFOLIO GRANTS -->
+      <div class="program-detail" id="portfolio">
+        <div class="program-icon">📸</div>
+        <div class="program-header">
+          <div>
+            <h2 class="program-title">Portfolio Grants</h2>
+            <div class="program-amount">$500 – $2,000 per grant</div>
+          </div>
         </div>
+        <p class="program-description">Professional portfolio shoots for emerging models and creative talent. We cover photographer fees, hair and makeup, studio rental, wardrobe, and professional retouching—everything needed to launch a career.</p>
+        
+        <div class="program-details">
+          <h3>What's Covered</h3>
+          <ul>
+            <li>Professional photographer (2–4 hour shoot)</li>
+            <li>Hair and makeup artist</li>
+            <li>Studio rental or location fees</li>
+            <li>Wardrobe and styling (if needed)</li>
+            <li>Professional retouching (10–20 final images)</li>
+          </ul>
+          
+          <h3>Eligibility</h3>
+          <ul>
+            <li>Ages 18–30 (emerging talent)</li>
+            <li>Demonstrable financial need</li>
+            <li>Serious about pursuing a creative career</li>
+            <li>Based in the United States</li>
+          </ul>
+        </div>
+        
+        <a href="apply.html" class="apply-btn">Apply for Portfolio Grant</a>
       </div>
-      <div class="program-content">
-        <div class="program-main">
-          <p>Professional portfolio photos are non-negotiable for models seeking agency representation or direct bookings. Yet shoots cost $1,000–$2,500 when you factor in photographer fees, hair and makeup, studio rental, wardrobe, and retouching. For emerging talent without savings or family support, this creates an impossible barrier.</p>
-          <p>Our Portfolio Grants cover the full cost of a professional shoot. We connect recipients with photographers from The Atelier network, coordinate hair and makeup artists, secure studio time, and handle all post-production. Recipients walk away with 15–25 publication-ready images suitable for agency submissions and comp cards.</p>
-          <p>This isn't charity — it's an investment. Grant recipients who complete portfolios secure representation or bookings at significantly higher rates than those with self-shot photos. We track first booking timelines and income earned in the year following the grant.</p>
-        </div>
-        <div class="program-sidebar">
-          <div class="sidebar-section">
-            <h3>What's Included</h3>
-            <ul>
-              <li>Professional photographer (2-3 hour shoot)</li>
-              <li>Hair and makeup artist</li>
-              <li>Studio rental or location fees</li>
-              <li>Wardrobe consultation</li>
-              <li>15-25 fully retouched images</li>
-              <li>Digital delivery + print files</li>
-            </ul>
-          </div>
-          <div class="sidebar-section">
-            <h3>Who Qualifies</h3>
-            <p>Aspiring models (editorial, commercial, runway) who demonstrate commitment but lack financial resources for professional photos.</p>
-          </div>
-          <div class="sidebar-section">
-            <h3>Application Process</h3>
-            <p>Submit work samples (even if self-shot), goals, and financial context. Reviewed quarterly.</p>
+      
+      <!-- BUSINESS GRANTS -->
+      <div class="program-detail" id="business">
+        <div class="program-icon">🚀</div>
+        <div class="program-header">
+          <div>
+            <h2 class="program-title">Business Startup Grants</h2>
+            <div class="program-amount">$1,000 – $5,000 per grant</div>
           </div>
         </div>
+        <p class="program-description">Capital for entrepreneurs launching photography studios, casting agencies, creative spaces, and talent-supporting businesses. We fund the infrastructure the creative economy needs.</p>
+        
+        <div class="program-details">
+          <h3>What We Fund</h3>
+          <ul>
+            <li>Photography studio equipment and setup</li>
+            <li>Casting agency technology and operations</li>
+            <li>Creative coworking space buildouts</li>
+            <li>Talent management platform development</li>
+            <li>Production company startup costs</li>
+          </ul>
+          
+          <h3>Requirements</h3>
+          <ul>
+            <li>Clear business plan focused on supporting emerging talent</li>
+            <li>Demonstrated industry experience</li>
+            <li>Commitment to accessible pricing for emerging talent</li>
+          </ul>
+        </div>
+        
+        <a href="apply.html" class="apply-btn">Apply for Business Grant</a>
       </div>
+      
+      <!-- FIRST BOOKING FUND -->
+      <div class="program-detail" id="booking">
+        <div class="program-icon">🎯</div>
+        <div class="program-header">
+          <div>
+            <h2 class="program-title">First Booking Fund</h2>
+            <div class="program-amount">Free Access</div>
+          </div>
+        </div>
+        <p class="program-description">Waived platform fees on recipients' first three professional bookings through The Atelier. Grant recipients keep 100% of their earnings until they're established.</p>
+        
+        <div class="program-details">
+          <h3>How It Works</h3>
+          <ul>
+            <li>Portfolio grant recipients automatically enrolled</li>
+            <li>Zero platform fees on first 3 bookings</li>
+            <li>Recipients keep 100% of earnings</li>
+            <li>Standard fees apply after 3 bookings</li>
+          </ul>
+        </div>
+        
+        <a href="apply.html" class="apply-btn">Learn More</a>
+      </div>
+      
+      <!-- EQUIPMENT LIBRARY -->
+      <div class="program-detail" id="equipment">
+        <div class="program-icon">📹</div>
+        <div class="program-header">
+          <div>
+            <h2 class="program-title">Equipment Library</h2>
+            <div class="program-amount">No-Cost Loans (30–90 days)</div>
+          </div>
+        </div>
+        <p class="program-description">Free equipment loans for emerging photographers, videographers, and creative studios. Cameras, lighting, backdrops, and audio gear available for 30–90 day periods.</p>
+        
+        <div class="program-details">
+          <h3>Available Equipment</h3>
+          <ul>
+            <li>Professional cameras (Canon, Sony, Nikon)</li>
+            <li>Lighting kits (strobes, continuous, modifiers)</li>
+            <li>Backdrops and studio accessories</li>
+            <li>Audio recording equipment</li>
+            <li>Lenses and specialty gear</li>
+          </ul>
+          
+          <h3>Loan Terms</h3>
+          <ul>
+            <li>30–90 day loan periods</li>
+            <li>Refundable security deposit required</li>
+            <li>Damage waiver insurance included</li>
+            <li>Pickup/return at foundation partner locations</li>
+          </ul>
+        </div>
+        
+        <a href="apply.html" class="apply-btn">Request Equipment</a>
+      </div>
+      
+      <!-- SPACE GRANTS -->
+      <div class="program-detail" id="space">
+        <div class="program-icon">🏢</div>
+        <div class="program-header">
+          <div>
+            <h2 class="program-title">Space Grants</h2>
+            <div class="program-amount">Up to 50% Rent (3–6 months)</div>
+          </div>
+        </div>
+        <p class="program-description">Rent subsidies for creative studios and production spaces serving emerging talent at accessible rates. We help studios offer below-market pricing to those who need it most.</p>
+        
+        <div class="program-details">
+          <h3>What We Fund</h3>
+          <ul>
+            <li>Photography and video production studios</li>
+            <li>Creative coworking and office spaces</li>
+            <li>Rehearsal and performance venues</li>
+            <li>Equipment rental facilities</li>
+          </ul>
+          
+          <h3>Requirements</h3>
+          <ul>
+            <li>Must offer reduced rates to emerging talent</li>
+            <li>Commitment to serving underrepresented communities</li>
+            <li>Track record of supporting creative professionals</li>
+          </ul>
+        </div>
+        
+        <a href="apply.html" class="apply-btn">Apply for Space Grant</a>
+      </div>
+      
+      <!-- MENTORSHIP -->
+      <div class="program-detail" id="mentorship">
+        <div class="program-icon">🎓</div>
+        <div class="program-header">
+          <div>
+            <h2 class="program-title">Mentorship & Workshops</h2>
+            <div class="program-amount">Open Access (Free)</div>
+          </div>
+        </div>
+        <p class="program-description">Free workshops and 1-on-1 mentorship from established professionals in the creative industry. Business skills, portfolio development, client relations, and career navigation.</p>
+        
+        <div class="program-details">
+          <h3>What We Offer</h3>
+          <ul>
+            <li>1-on-1 mentorship with industry professionals</li>
+            <li>Monthly workshops on business and creative skills</li>
+            <li>Portfolio review sessions</li>
+            <li>Networking events and industry connections</li>
+            <li>Career planning and goal setting</li>
+          </ul>
+          
+          <h3>Topics Covered</h3>
+          <ul>
+            <li>Building a professional portfolio</li>
+            <li>Pricing and negotiation strategies</li>
+            <li>Client communication and contracts</li>
+            <li>Marketing and social media</li>
+            <li>Business formation and taxes</li>
+          </ul>
+        </div>
+        
+        <a href="apply.html" class="apply-btn">Join Mentorship Program</a>
+      </div>
+      
     </div>
-  </section>
-
-  <section class="program-section" id="business">
-    <div class="program-container">
-      <div class="program-header">
-        <span class="program-icon">🚀</span>
-        <div class="program-title-block">
-          <h2>Business Startup Grants</h2>
-          <div class="program-amount">$1,000 – $5,000 per grant</div>
-        </div>
-      </div>
-      <div class="program-content">
-        <div class="program-main">
-          <p>Talent needs infrastructure. Photographers need studios to launch portrait businesses. Casting directors need capital to register LLCs and build websites. Producers need equipment to open creative spaces. Stylists need startup funds to formalize agencies. The creative economy requires entrepreneurs — but traditional small business loans rarely serve creative ventures.</p>
-          <p>Our Business Startup Grants fund entrepreneurs launching talent-supporting businesses. Capital can cover business registration, website development, initial equipment purchases, first month's rent, marketing materials, or other essential startup costs. We prioritize businesses that will serve emerging talent at accessible rates.</p>
-          <p>Recipients submit business plans showing how they'll create opportunities for talent. We track businesses launched, services offered, and number of emerging creatives served in the first year. Successful recipients gain access to our network for client referrals and mentorship.</p>
-        </div>
-        <div class="program-sidebar">
-          <div class="sidebar-section">
-            <h3>Eligible Uses</h3>
-            <ul>
-              <li>Business registration & legal setup</li>
-              <li>Website development</li>
-              <li>Initial equipment purchases</li>
-              <li>First month rent for studio/office</li>
-              <li>Marketing materials & branding</li>
-              <li>Insurance & licensing fees</li>
-            </ul>
-          </div>
-          <div class="sidebar-section">
-            <h3>Who Qualifies</h3>
-            <p>Entrepreneurs launching photography studios, casting agencies, creative spaces, production companies, or other businesses serving emerging talent.</p>
-          </div>
-          <div class="sidebar-section">
-            <h3>Required</h3>
-            <p>Business plan, budget breakdown, and commitment to serving emerging talent at accessible rates.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="program-section" id="booking">
-    <div class="program-container">
-      <div class="program-header">
-        <span class="program-icon">🎯</span>
-        <div class="program-title-block">
-          <h2>First Booking Fund</h2>
-          <div class="program-amount">Waived Platform Fees</div>
-        </div>
-      </div>
-      <div class="program-content">
-        <div class="program-main">
-          <p>Many talented models have portfolios but struggle to secure their first professional bookings. The Atelier platform connects talent with brands, but our 30% platform fee can feel prohibitive when you're still building momentum and haven't yet generated consistent income.</p>
-          <p>Recipients of the First Booking Fund get their first three bookings through The Atelier with waived platform fees. Instead of keeping 70% of booking value, they keep 100%. This gives them runway to build their reputation, secure testimonials, and establish cash flow before platform fees kick in.</p>
-          <p>After three fee-waived bookings, recipients transition to standard platform terms. We track booking completion rates, client satisfaction, and income earned. The goal is to launch sustainable careers, not just provide one-time support.</p>
-        </div>
-        <div class="program-sidebar">
-          <div class="sidebar-section">
-            <h3>How It Works</h3>
-            <ul>
-              <li>Join The Atelier platform</li>
-              <li>First 3 bookings: 0% platform fee</li>
-              <li>You keep 100% of booking value</li>
-              <li>After 3 bookings: standard 30% fee</li>
-              <li>No repayment required</li>
-            </ul>
-          </div>
-          <div class="sidebar-section">
-            <h3>Who Qualifies</h3>
-            <p>Models and creators with complete portfolios but no professional booking history or income.</p>
-          </div>
-          <div class="sidebar-section">
-            <h3>Requirements</h3>
-            <p>Must have portfolio (can be from our Portfolio Grant program) and complete Atelier profile.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="program-section" id="equipment">
-    <div class="program-container">
-      <div class="program-header">
-        <span class="program-icon">📹</span>
-        <div class="program-title-block">
-          <h2>Equipment Library</h2>
-          <div class="program-amount">30–90 Day Loans</div>
-        </div>
-      </div>
-      <div class="program-content">
-        <div class="program-main">
-          <p>UGC creators need cameras, lighting, and audio equipment to build brand portfolios. Photographers launching studios need professional gear before they can secure paying clients. The equipment barrier stops talented creators from building businesses — you can't earn money creating content if you can't afford the tools to create it.</p>
-          <p>Our Equipment Library provides free 30–90 day loans of cameras, lighting kits, backdrops, tripods, audio gear, and other production equipment. Recipients use this time to build portfolios, secure their first clients, and generate income. Once they've earned enough, they can purchase the equipment outright or return it for the next recipient.</p>
-          <p>We track portfolio growth, client acquisition, and income earned during the loan period. Successful recipients often buy out their equipment at fair market value, which funds the library's expansion. Equipment returned in good condition goes to the next applicant in queue.</p>
-        </div>
-        <div class="program-sidebar">
-          <div class="sidebar-section">
-            <h3>Available Equipment</h3>
-            <ul>
-              <li>DSLR and mirrorless cameras</li>
-              <li>LED lighting kits</li>
-              <li>Backdrops and stands</li>
-              <li>Audio recording equipment</li>
-              <li>Tripods and stabilizers</li>
-              <li>Editing software licenses</li>
-            </ul>
-          </div>
-          <div class="sidebar-section">
-            <h3>Loan Terms</h3>
-            <p>30–90 day loans. Option to buy out at fair market value. Must return in good condition or replace if damaged.</p>
-          </div>
-          <div class="sidebar-section">
-            <h3>Who Qualifies</h3>
-            <p>UGC creators, photographers, and videographers committed to building professional portfolios and client bases.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="program-section" id="space">
-    <div class="program-container">
-      <div class="program-header">
-        <span class="program-icon">🏢</span>
-        <div class="program-title-block">
-          <h2>Space Grants</h2>
-          <div class="program-amount">3–6 Month Rent Subsidy</div>
-        </div>
-      </div>
-      <div class="program-content">
-        <div class="program-main">
-          <p>Creative businesses need physical space — photography studios, production offices, co-working spaces for talent, rehearsal studios. But commercial rent is prohibitively expensive during the launch phase when revenue is uncertain. Many talented entrepreneurs abandon viable business ideas because they can't afford the first 3–6 months of rent while building their client base.</p>
-          <p>Space Grants provide up to 50% rent subsidies for 3–6 months. This covers the critical early period when you're marketing services, securing first clients, and establishing cash flow. We prioritize spaces that will serve emerging talent at accessible rates — portfolio studios offering discounted shoots, creative co-working spaces with affordable memberships, production offices with equipment rental programs.</p>
-          <p>Recipients must demonstrate how their space will create opportunities for emerging talent. We track number of creatives served, services offered, and business sustainability after the subsidy period ends. Successful spaces often become long-term partners in our network.</p>
-        </div>
-        <div class="program-sidebar">
-          <div class="sidebar-section">
-            <h3>Eligible Spaces</h3>
-            <ul>
-              <li>Photography studios</li>
-              <li>Production offices</li>
-              <li>Creative co-working spaces</li>
-              <li>Rehearsal studios</li>
-              <li>Casting offices</li>
-              <li>Multi-use creative spaces</li>
-            </ul>
-          </div>
-          <div class="sidebar-section">
-            <h3>Subsidy Terms</h3>
-            <p>Up to 50% of monthly rent for 3–6 months. Must serve emerging talent at subsidized rates.</p>
-          </div>
-          <div class="sidebar-section">
-            <h3>Requirements</h3>
-            <p>Signed lease, business plan, commitment to accessible pricing for emerging talent.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="program-section" id="mentorship">
-    <div class="program-container">
-      <div class="program-header">
-        <span class="program-icon">🎓</span>
-        <div class="program-title-block">
-          <h2>Mentorship & Workshops</h2>
-          <div class="program-amount">Free Access</div>
-        </div>
-      </div>
-      <div class="program-content">
-        <div class="program-main">
-          <p>Financial barriers are obvious — you either have money for a portfolio shoot or you don't. But knowledge barriers are just as significant. How do you price yourself? Navigate contracts? Build a professional network? Avoid exploitative clients? Manage taxes as a freelancer? These questions trip up even talented creatives.</p>
-          <p>All Foundation recipients get free access to our Mentorship & Workshops program. We host quarterly workshops on business development, contract negotiation, social media strategy, financial planning, and industry navigation. Topics are chosen based on recipient feedback and common challenges we see.</p>
-          <p>Beyond group workshops, we offer 1-on-1 mentorship pairing recipients with established professionals in our network. Photographers get guidance from working photographers. Models connect with experienced talent. Entrepreneurs get business coaching from creative business owners. Mentorship relationships last 6-12 months minimum.</p>
-        </div>
-        <div class="program-sidebar">
-          <div class="sidebar-section">
-            <h3>Workshop Topics</h3>
-            <ul>
-              <li>Pricing & contract negotiation</li>
-              <li>Social media strategy</li>
-              <li>Portfolio development</li>
-              <li>Tax planning for freelancers</li>
-              <li>Client communication</li>
-              <li>Business development</li>
-            </ul>
-          </div>
-          <div class="sidebar-section">
-            <h3>Mentorship</h3>
-            <p>1-on-1 pairing with established professionals. 6-12 month commitments. Monthly check-ins and ongoing support.</p>
-          </div>
-          <div class="sidebar-section">
-            <h3>Who Qualifies</h3>
-            <p>All Foundation grant recipients plus limited open cohorts for emerging talent not receiving other support.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <h2>Ready to Apply?</h2>
-    <p>Applications are reviewed quarterly. We prioritize talent and entrepreneurs facing genuine financial barriers. Select all programs that apply — you can apply for multiple types of support.</p>
-    <a href="apply.html" class="btn btn-primary">Submit Application</a>
-    <a href="contact.html" class="btn btn-secondary">Ask Questions First</a>
   </section>
 
   <footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h3>THE ELÉVARA FOUNDATION</h3>
-        <p>A 501(c)(3) nonprofit organization removing financial barriers for emerging creative talent and entrepreneurs building the creative economy.</p>
-        <p style="font-size: 12px; color: var(--gold); letter-spacing: 0.06em; margin-top: 20px;">EIN: [Pending 501(c)(3) Application]</p>
-      </div>
-      <div class="footer-section">
-        <h4>Programs</h4>
-        <ul>
-          <li><a href="#portfolio">Portfolio Grants</a></li>
-          <li><a href="#business">Business Grants</a></li>
-          <li><a href="#booking">First Booking Fund</a></li>
-          <li><a href="#equipment">Equipment Library</a></li>
-          <li><a href="#space">Space Grants</a></li>
-          <li><a href="#mentorship">Mentorship</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Get Involved</h4>
-        <ul>
-          <li><a href="donate.html">Make a Donation</a></li>
-          <li><a href="apply.html">Apply for Support</a></li>
-          <li><a href="contact.html">Corporate Partnership</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Foundation</h4>
-        <ul>
-          <li><a href="mission.html">Our Mission</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="impact.html">Impact Reports</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 The Elévara Foundation. All rights reserved.</p>
-      <p style="font-size: 13px; color: var(--gold); letter-spacing: 0.06em;">foundation@elevarafoundation.org · 501(c)(3) Pending</p>
-    </div>
+    <p>© 2026 The Elévara Foundation. All rights reserved.</p>
+    <p class="footer-contact">
+      <a href="mailto:foundation@elevarafoundation.org">foundation@elevarafoundation.org</a> · 
+      <a href="tel:+17063630811">(706) 363-0811</a> · 
+      501(c)(3) Pending
+    </p>
   </footer>
 
 </body>

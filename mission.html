@@ -101,6 +101,53 @@
       color: var(--gold-bright);
     }
     
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 300;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+    
+    .donate-btn-nav {
+      padding: 10px 24px;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+    
+    .donate-btn-nav:hover {
+      background: var(--gold-bright);
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+    
     .hero {
       margin-top: 80px;
       padding: 120px 32px 80px;
@@ -237,6 +284,15 @@
         <img src="logo.png" alt="The Elévara Foundation">
         <span>THE ELÉVARA FOUNDATION</span>
       </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html" class="active">Our Mission</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="donate.html" class="donate-btn-nav">Donate</a>
     </nav>
   </header>
 
